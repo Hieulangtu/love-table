@@ -1,0 +1,98 @@
+[
+  [
+    {
+      "name":0,
+      "id": 1,
+      "tema": "python",
+      "ucebna": "Š8/20",
+      "ucitel": "Štefek, Alexandr",
+      "cas": "8:00-9:30",
+      "den": "2022-10-09"
+    },
+    {
+      "id": 2,
+      "tema": "objektově orientované programování",
+      "ucebna": "Š8/20",
+      "ucitel": "Štefek, Alexandr",
+      "cas": "8:00-9:30",
+      "den": "2022-10-16"
+    },
+    {
+      "id": 3,
+      "tema": "Protokol",
+      "ucebna": "Š8/20",
+      "ucitel": "Štefek, Alexandr",
+      "cas": "8:00-9:30",
+      "den": "2022-10-23"
+    }
+  ],
+
+  [
+    {
+      "name":1,
+      "id": 1,
+      "tema": "Náhodné jevy",
+      "ucebna": "Š8/44",
+      "ucitel": "Mayerová, Šarka",
+      "cas": "8:00-9:30",
+      "den": "2022-10-09"
+    },
+    {
+      "id": 2,
+      "tema": "Integral",
+      "ucebna": "Š8/44",
+      "ucitel": "Mayerová, Šarka",
+      "cas": "8:00-9:30",
+      "den": "2022-10-16"
+    },
+    {
+      "id": 3,
+      "tema": "Matice",
+      "ucebna": "Š8/43",
+      "ucitel": "Šindlář,Vojtěch",
+      "cas": "8:00-9:30",
+      "den": "2022-10-23"
+    }
+  ],
+
+  [
+    {
+      "name":2,
+      "id": 1,
+      "tema": "Úvod",
+      "ucebna": "Š8/44",
+      "ucitel": "Potůček, Radovan",
+      "cas": "8:00-9:30",
+      "den": "2022-10-09"
+    },
+    {
+      "id": 2,
+      "tema": "Grafy - základní pojmy",
+      "ucebna": "Š8/44",
+      "ucitel": "Potůček, Radovan",
+      "cas": "8:00-9:30",
+      "den": "2022-10-16"
+    }
+  ],
+
+  [
+    {
+      "name":3,
+      "id": 1,
+      "tema": "Uniforms in Army",
+      "ucebna": "K215",
+      "ucitel": "Mulerova",
+      "cas": "8:00-9:30",
+      "den": "2022-10-09"
+    },
+    {
+      "id": 2,
+      "tema": "Beauty of Vietnam",
+      "ucebna": "K216",
+      "ucitel": "Mulerova",
+      "cas": "8:00-9:30",
+      "den": "2022-10-16"
+    }
+
+  ]
+]
