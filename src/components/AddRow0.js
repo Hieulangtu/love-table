@@ -19,6 +19,12 @@ const AddRow0 = ({handleDataAdd,handleDataAddConfirm}) => {
                   <option value="Pascal"/>
                   <option value="Python"/>
                   <option value="PHP"/>
+                  <option value="Server webové aplikace"/>
+                  <option value="Základní techniky"/>
+                  <option value="Architektura webové aplikace"/>
+                  <option value="Protokoly"/>
+                  <option value="Klient webové aplikace"/>
+                  <option value="Jazyky třídy Javascript"/>
                   <option value="Podpůrné prvky webové aplikace"/>
               </datalist>
       </td>

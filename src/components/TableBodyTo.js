@@ -22,20 +22,7 @@ function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){
     return <AddRow3 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
    }
 
-//    switch(nameSubject){
-//        case 0:
-//            return <AddRow0 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-//            break;
-//        case 1:   
-//            return <AddRow1 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-//            break;
-//        case 2:
-//           return <AddRow2 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-//           break;
-//        case 3:
-//           return <AddRow3 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
 
-//    }
 }
 
 const TableBodyTo = ({dataSubs,indexSubject}) => {

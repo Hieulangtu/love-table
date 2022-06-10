@@ -20,7 +20,11 @@ const AddRow3 = ({handleDataAdd,handleDataAddConfirm}) => {
                   <option value="Musics"/>
                   <option value="Vietnamese Curses"/>
                   <option value="Cuisine of Europe"/>
-                  <option value="Đẹp trai là ai ?"/>              
+                  <option value="Đẹp trai là ai ?"/>
+                  <option value="Story of my life"/>              
+                  <option value="uniforms"/>
+                  <option value="Idioms"/>
+                  <option value="Imagine Dragons"/>
               </datalist>
       </td>
               

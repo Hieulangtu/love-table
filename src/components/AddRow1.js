@@ -22,6 +22,10 @@ const AddRow1 = ({handleDataAdd,handleDataAddConfirm}) => {
                   <option value="Náhodné vektory"/>
                   <option value="Matematická statistika"/>
                   <option value="Testy statistických hypotéz"/>
+                  <option value="Pravděpodobnost"/>
+                  <option value="Statistika"/>
+                  <option value="Analýza rozptylu"/>
+                  <option value="Regresní analýza"/>
                   <option value="Statistické tabulky"/>
               </datalist>
       </td>

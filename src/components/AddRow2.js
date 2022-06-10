@@ -25,6 +25,10 @@ const AddRow2 = ({handleDataAdd,handleDataAddConfirm}) => {
                   <option value="Hranová barvení grafů"/>
                   <option value="Vrcholová barvení grafů"/>
                   <option value="Planární grafy, Neplanární grafy"/>
+                  <option value="Eulerovské a hamiltonovské grafy"/>
+                  <option value="Orientované grafy"/>
+                  <option value="Toky v sítích"/>
+                  <option value="Síťová analýza"/>
               </datalist>
       </td>
               
