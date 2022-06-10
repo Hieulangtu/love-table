@@ -11,8 +11,8 @@ import PickedRowUU from './PickedRowUU';
 
 
 
-function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){
-   if(nameSubject===0){
+function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
+   if(nameSubject===0){ 
     return <AddRow0 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
    }else if(nameSubject===1){
     return <AddRow1 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
@@ -27,8 +27,8 @@ function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){
 
 const TableBodyTo = ({dataSubs,indexSubject}) => {
   
-    const [dataSubjects,setDataSubjects]=useState(dataSubs);              //STATE
-    const [dataAdd,setDataAdd]=useState({             //STATE
+    const [dataSubjects,setDataSubjects]=useState(dataSubs);              //STATE: main data - Informations for each subject
+    const [dataAdd,setDataAdd]=useState({             //STATE : The data we set to add to main data
      tema:'',
      ucebna:'',
      ucitel:'',
@@ -36,7 +36,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
      den:''
     })    
 
-    const [dataChange,setDataChange]=useState({            //STATE
+    const [dataChange,setDataChange]=useState({            //STATE : the data we set in each row to edit, then use this data to replace the one we want to edit 
      tema:'',
      ucebna:'',
      ucitel:'',
@@ -44,17 +44,17 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
      den:''
     })
 
-    const [dataPickedUU,setDataPickedUU]=useState({   //STATE giữ kiện lưu chung dùng để úp ào những hàng đã chọn
+    const [dataPickedUU,setDataPickedUU]=useState({   //STATE : the data we set for PICKED row ( only ucebna and ucitel) // UU means Ucebna-Ucitel
       ucebna:'',
       ucitel:''
     })
 
-    const [editDataId,setEditDataId]=useState(null);//edit Id chỉ vào mỗi dòng        //STATE
-    const [pickedDataIdsUU,setPickedDataIdsUU]=useState([]);   //State danh sách dòng đc chọn
+    const [editDataId,setEditDataId]=useState(null);   //STATE: the id of the row when we click edit in that row 
+    const [pickedDataIdsUU,setPickedDataIdsUU]=useState([]);   //State: List of PICKED rows
    
 
 
-    const handlePickedDataIdsUU=(datID)=>{ //bấm vào các check box để xác định dòng được chọn
+    const handlePickedDataIdsUU=(datID)=>{ // handle list of PICKED rows //Click checkbox of each row to indentify the rows to change Ucebna and Ucitel
       
       // const isPicked=pickedDataIdsUU.includes(datID);
       var newPickedDataIdsUU=[...pickedDataIdsUU];
@@ -71,7 +71,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
     }
 
-    const handleDataPickedUU=(event)=>{         //Dữ kiện UU quản lý
+    const handleDataPickedUU=(event)=>{         // handle data we set for PICKED rows //Fill information you want to add in Input tags
       //  event.preventDefault();
 
        const fieldName=event.target.getAttribute('name');
@@ -84,7 +84,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
       //  console.log(dataPickedUU);
     }
 
-    const handleDataPickedUUConfirm=(event)=>{   //Set Data xác nhận thay đổi với dữ kiện UU
+    const handleDataPickedUUConfirm=(event)=>{   // Set dataSubjects with new data we set for PICKED rows //Click button 'Save Change' to save
       event.preventDefault();
       const newDataSubjects=[...dataSubjects];
       newDataSubjects.map((dat,index)=>{
@@ -100,7 +100,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
     }
     
-    const handleDataAdd=(event)=>{   //nhập vào để thêm dòng            
+    const handleDataAdd=(event)=>{   // handle data that we set to add (data of new row)  //Fill information you want to add in Input tags        
       event.preventDefault();
 
       const fieldName=event.target.getAttribute('name');
@@ -110,10 +110,9 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
       newData[fieldName]=fieldValue;
 
       setDataAdd(newData);
-      // console.log(dataAdd);
     }
 
-    const handleDataChange=(event)=>{   //nhập vào sửa nội dung dòng
+    const handleDataChange=(event)=>{   // handle data we set to edit/change for each row //Fill information you want to change in Input tags
       event.preventDefault();
       const fieldName=event.target.getAttribute('name');
       const fieldValue=event.target.value;
@@ -125,7 +124,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
     }
 
-    const handleDataAddConfirm=(event)=>{   //click vào nút add trong chỗ thêm dòng
+    const handleDataAddConfirm=(event)=>{   //Set dataSubjects with new data  //Click button Add in first row to add new row
       event.preventDefault(); //nếu ko preventdefault, onSubmit sẽ reflesh lại trang
       const newData={
         id:nanoid(),
@@ -135,27 +134,16 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
         cas:dataAdd.cas,
         den:dataAdd.den
       };
-      
-      
+           
       const newDataSubjects=[...dataSubjects,newData]
       setDataSubjects(newDataSubjects);
-    //   setDataAdd({             
-    //     tema:'',
-    //     ucebna:'',
-    //     ucitel:'',
-    //     cas:'',
-    //     den:''
-    //    })
-
-
     }
 
-    const handleDataChangeConfirm=(event)=>{
+    const handleDataChangeConfirm=(event)=>{   //Set dataSubjects with new data (edit change a row) //Click button Save to save chnages
       event.preventDefault();      //nếu ko preventdefault, onSubmit sẽ reflesh lại trang
       console.log('cc');
 
       const DataChanged={
-        // id:nanoid(),
         id:editDataId,
         tema:dataChange.tema,
         ucebna:dataChange.ucebna,
@@ -165,7 +153,6 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
       };
 
       const newDataSubjects=[...dataSubjects];
-      // newDataSubjects[index]=DataChanged;
       const index=dataSubjects.findIndex((data)=>data.id===editDataId);
       newDataSubjects[index]=DataChanged;
       setDataSubjects(newDataSubjects);
@@ -173,11 +160,11 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
     }
 
-   const handleEditClick=(event,dat)=>{  //click vào nút edit ở mỗi dòng để chỉnh sửa dòng đó
+   const handleEditClick=(event,dat)=>{  //click button edit in each row to edit change in that row
      event.preventDefault();
      setEditDataId(dat.id);
 
-     const formValue={ //ko dùng spread ??
+     const formValue={ 
        tema:dat.tema,
        ucebna:dat.ucebna,
        ucitel:dat.ucitel,
@@ -189,7 +176,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
    }
 
-   const handleCancelClick=(event)=>{
+   const handleCancelClick=(event)=>{ //Click button Cancel in each row to cancel the editing
      event.preventDefault();
      setEditDataId(null);
    }
@@ -203,7 +190,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
      setDataSubjects(newDataSubjects);
    }
 
-   const handleRowMoveDown=(dataIdToMoveDown)=>{
+   const handleRowMoveDown=(dataIdToMoveDown)=>{ //Click button Move down to change the position of the row
     const newDataSubjects=[...dataSubjects];
 
     const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveDown);
@@ -216,7 +203,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
    }
 
-   const handleRowMoveUp=(dataIdToMoveUp)=>{
+   const handleRowMoveUp=(dataIdToMoveUp)=>{ //Click button Move up to change the position of the row
     const newDataSubjects=[...dataSubjects];
 
     const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveUp);
