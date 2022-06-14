@@ -1,10 +1,8 @@
 // import logo from './logo.svg';
 
 import React, { useState, Fragment } from "react";
-
 import "./App.css";
 import data from "./mock-data.json"
-
 import TableBodyTo from "./components/TableBodyTo";
 
 // function App() {
