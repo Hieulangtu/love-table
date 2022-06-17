@@ -127,28 +127,28 @@ const ReadOnlyRow = ({data, handleEditClick,handleDeleteClick,handleRowMoveUp,
         {/* <td>{data.cas}</td>
         <td>{data.den}</td> */}
         <td>
-            <button type='button' onClick={(event)=>handleEditClick(event,data)}>Edit</button>
-            <button type="button" onClick={()=>handleDeleteClick(data.id)} >Delete</button>
+            <button className='btn btn-outline-primary' type='button' onClick={(event)=>handleEditClick(event,data)}>Edit</button>
+            <button className='btn btn-outline-primary' type="button" onClick={()=>handleDeleteClick(data.id)} >Delete</button>
         </td>
         {
         (dataSubjects.length===1)
         ||
         (index===0
         &&<td>
-            <button type='button' onClick={()=>handleRowMoveDown(data.id)}>Move Down</button>
+            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveDown(data.id)}>Move Down</button>
           </td>
         )
         ||
         (index===(dataSubjects.length-1)
         &&<td>
-            <button type='button' onClick={()=>handleRowMoveUp(data.id)}>Move Up</button>
+            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveUp(data.id)}>Move Up</button>
           </td>
         )
         ||
         (true
         &&<td>
-            <button type='button' onClick={()=>handleRowMoveUp(data.id)}>Move Up</button>
-            <button type='button' onClick={()=>handleRowMoveDown(data.id)}>Move Down</button>
+            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveUp(data.id)}>Move Up</button>
+            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveDown(data.id)}>Move Down</button>
           </td>
         )
         }
