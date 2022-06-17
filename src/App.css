@@ -97,7 +97,7 @@ form * {
   font-size: 28px;
 }
 
-button{
+/* button{
   margin-top: 15px;
   cursor: pointer;
   transition-duration: 0.2s;
@@ -105,9 +105,9 @@ button{
 }
 
 button:hover {
-  background-color: rgb(117, 201, 250); /* Green */
+  background-color: rgb(117, 201, 250); 
   color: white;
-}
+} */
 
 .check-input{
   width: 50px;
