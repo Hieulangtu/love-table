@@ -58,28 +58,28 @@ function LabelAndTable({dataSubs,indexSubject}){
   if(indexSubject===0){
     return(
       <Fragment>
-        <button style={{"margin":'auto','display':'flex','font-size':'50px'}} type='button' onClick={()=>setShowInformatika(true)}>Informatika</button>
+        <button style={{"margin":'auto','display':'flex','font-size':'50px','margin-bottom':'5px'}} type='button' onClick={()=>setShowInformatika(!showInformatika)}>Informatika</button>
         {showInformatika&&<TableBodyTo dataSubs={dataSubs} indexSubject={indexSubject}/>}
       </Fragment>
     )
   }else if(indexSubject===1){
     return(
       <Fragment>
-        <button style={{"margin":'auto','display':'flex','font-size':'50px'}} type='button' onClick={()=>setShowMatematika(true)}>Matematika</button>
+        <button style={{"margin":'auto','display':'flex','font-size':'50px','margin-bottom':'5px'}} type='button' onClick={()=>setShowMatematika(!showMatematika)}>Matematika</button>
         {showMatematika&&<TableBodyTo dataSubs={dataSubs} indexSubject={indexSubject}/>}
       </Fragment>
     )
   }else if(indexSubject===2){
     return(
       <Fragment>
-        <button style={{"margin":'auto','display':'flex','font-size':'50px'}} type='button' onClick={()=>setShowTG(true)}>Teorie Graf</button>
+        <button style={{"margin":'auto','display':'flex','font-size':'50px','margin-bottom':'5px'}} type='button' onClick={()=>setShowTG(!showTG)}>Teorie Graf</button>
         {showTG&&<TableBodyTo dataSubs={dataSubs} indexSubject={indexSubject}/>}
       </Fragment>
     )
   }else{
     return(
       <Fragment>
-        <button style={{"margin":'auto','display':'flex','font-size':'50px'}} type='button' onClick={()=>setShowEnglish(true)}>English</button>
+        <button style={{"margin":'auto','display':'flex','font-size':'50px','margin-bottom':'5px'}} type='button' onClick={()=>setShowEnglish(!showEnglish)}>English</button>
         {showEnglish&&<TableBodyTo dataSubs={dataSubs} indexSubject={indexSubject}/>}
       </Fragment>
     )
