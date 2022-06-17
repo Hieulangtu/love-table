@@ -26,8 +26,9 @@ function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ //nameSubject
 }
 
 const TableBodyTo = ({dataSubs,indexSubject}) => {
+   const storageDataSubjects=JSON.parse(localStorage.getItem('subject'+indexSubject))
   
-    const [dataSubjects,setDataSubjects]=useState(dataSubs);              //STATE: main data - Informations for each subject
+    const [dataSubjects,setDataSubjects]=useState(storageDataSubjects?? dataSubs);              //STATE: main data - Informations for each subject
     const [dataAdd,setDataAdd]=useState({             //STATE : The data we set to add to main data
      tema:'',
      ucebna:'',
@@ -126,6 +127,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
 
     const handleDataAddConfirm=(event)=>{   //Set dataSubjects with new data  //Click button Add in first row to add new row
       event.preventDefault(); //nếu ko preventdefault, onSubmit sẽ reflesh lại trang
+
       const newData={
         id:nanoid(),
         tema:dataAdd.tema,
@@ -134,8 +136,13 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
         cas:dataAdd.cas,
         den:dataAdd.den
       };
-           
+     
       const newDataSubjects=[...dataSubjects,newData]
+
+      //Save to local Storage
+      const jsonDataSubjects=JSON.stringify(newDataSubjects);
+      localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
+
       setDataSubjects(newDataSubjects);
     }
 
@@ -217,9 +224,10 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
    
  
   return(
-      <div className="app-container">
+      // <div className="app-container">
+      <div className="app-container" >
         <form >
-          <table>
+          <table className='table table-hover' >
               <thead>
                   <Tablehead/>
               </thead>
