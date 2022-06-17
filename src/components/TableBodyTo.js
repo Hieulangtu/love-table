@@ -94,6 +94,9 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
           if(dataPickedUU.ucitel !== ''){newDataSubjects[index].ucitel=dataPickedUU.ucitel;}                    
         }
       })
+      //Save to local Storage
+      const jsonDataSubjects=JSON.stringify(newDataSubjects);
+      localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
 
       setDataSubjects(newDataSubjects);
       setPickedDataIdsUU([]);
@@ -162,6 +165,11 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
       const newDataSubjects=[...dataSubjects];
       const index=dataSubjects.findIndex((data)=>data.id===editDataId);
       newDataSubjects[index]=DataChanged;
+      //Save to local Storage
+      const jsonDataSubjects=JSON.stringify(newDataSubjects);
+      localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
+
+
       setDataSubjects(newDataSubjects);
       setEditDataId(null);
 
@@ -194,6 +202,9 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
      const index=dataSubjects.findIndex((dat)=>dat.id===dataIdtoDelte);
 
      newDataSubjects.splice(index,1);  //index là vị trí, 1 là số phần tử muốn xóa
+     //Save to local Storage
+     const jsonDataSubjects=JSON.stringify(newDataSubjects);
+     localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
      setDataSubjects(newDataSubjects);
    }
 
@@ -204,6 +215,9 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
     const temData=newDataSubjects[index];
     newDataSubjects[index]=newDataSubjects[index+1];
     newDataSubjects[index+1]=temData;
+    //Save to local Storage
+    const jsonDataSubjects=JSON.stringify(newDataSubjects);
+    localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
     setDataSubjects(newDataSubjects);
 
     
@@ -217,6 +231,9 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
     const temData=newDataSubjects[index];
     newDataSubjects[index]=newDataSubjects[index-1];
     newDataSubjects[index-1]=temData;
+    //Save to local Storage
+    const jsonDataSubjects=JSON.stringify(newDataSubjects);
+    localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
     setDataSubjects(newDataSubjects);
 
    }
