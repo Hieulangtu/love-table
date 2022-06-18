@@ -27,7 +27,7 @@ const PickedRowUU = ({handleDataPickedUU,handleDataPickedUUConfirm}) => {
             ></input>
        </td>
        <td style={{'background-color': 'aquamarine'}}>
-          <button type='button' onClick={handleDataPickedUUConfirm} >Save Changes</button>
+          <button type='button' className="btn btn-bm btn-outline-success" onClick={handleDataPickedUUConfirm} ><i className="bi bi-clipboard-plus">Save Changes</i></button>
        </td>
        {/* <td style={{'background-color': 'aquamarine'}}></td> */}
     </tr>

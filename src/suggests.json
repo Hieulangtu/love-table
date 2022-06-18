@@ -1,0 +1,101 @@
+[
+    {
+        "suggestTema":[
+            "Pascal",
+            "Python",
+            "PHP",
+            "Server webové aplikace",
+            "Základní techniky",
+            "Architektura webové aplikace",
+            "Protokoly",
+            "Klient webové aplikace",
+            "Jazyky třídy Javascript",
+            "Podpůrné prvky webové aplikace"
+        ],
+        "suggestUcebna":[
+            "Š8/20",
+            "Š6/20"
+        ],
+        "suggestUcitel":[
+            "Štefek, Alexandr",
+            "Františ, Petr"
+        ]
+    },
+
+    {
+        "suggestTema":[
+            "Náhodné jevy",
+            "Empirický pojem pravděpodobnosti",
+            "Jevy a množiny",
+            "Náhodné veličiny",
+            "Náhodné vektory",
+            "Matematická statistika",
+            "Testy statistických hypotéz",
+            "Pravděpodobnost",
+            "Statistika",
+            "Analýza rozptylu",
+            "Regresní analýza",
+            "Statistické tabulky"
+        ],
+        "suggestUcebna":[
+            "Š8/44",
+            "Š8/43"
+        ],
+        "suggestUcitel":[
+            "Mayerová, Šarka",
+            "Šindlář,Vojtěch"
+        ]
+    },
+
+    {
+        "suggestTema":[
+            "Grafy - základní pojmy",
+            "Podgrafy",
+            "Cesty a cykly v grafu",
+            "Stromy, cykly a bipartitní grafy",
+            "Izomorfismus grafů",
+            "Vrcholová a hranová souvislost",
+            "Párování a pokrytí",
+            "Hranová barvení grafů",
+            "Vrcholová barvení grafů",
+            "Planární grafy, Neplanární grafy",
+            "Eulerovské a hamiltonovské grafy",
+            "Orientované grafy",
+            "Toky v sítích",
+            "Síťová analýza"
+        ],
+        "suggestUcebna":[
+            "Š8/44",
+            "Š8/43"
+        ],
+        "suggestUcitel":[
+            "Potůček, Radovan"
+        ]
+    },
+
+    {
+        "suggestTema":[
+            "Cinemas",
+            "Musics",
+            "Vietnamese Curses",
+            "Cuisine of Europe",
+            "Đẹp trai là ai ?",
+            "Story of my life",              
+            "uniforms",
+            "Idioms",
+            "Imagine Dragons"
+        ],
+        "suggestUcebna":[
+            "K251",
+            "K253",
+            "K256",
+            "K258"
+        ],
+        "suggestUcitel":[         
+            "Mulerova",
+            "Ivana",
+            "kolackova"
+        ]
+    }
+
+]

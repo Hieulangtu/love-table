@@ -8,9 +8,10 @@ import AddRow1 from './AddRow1';
 import AddRow2 from './AddRow2';
 import AddRow3 from './AddRow3';
 import PickedRowUU from './PickedRowUU';
+import AddRow from './AddRow';
 
 
-
+//Tak nepotrebuji this component - RowAdd
 function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
    if(nameSubject===0){ 
     return <AddRow0 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
@@ -22,13 +23,15 @@ function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ //nameSubject
     return <AddRow3 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
    }
 
-
 }
 
-const TableBodyTo = ({dataSubs,indexSubject}) => {
+
+
+const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
    const storageDataSubjects=JSON.parse(localStorage.getItem('subject'+indexSubject))
   
     const [dataSubjects,setDataSubjects]=useState(storageDataSubjects?? dataSubs);              //STATE: main data - Informations for each subject
+    //const [dataSubjects,setDataSubjects]=useState(dataSubs);
     const [dataAdd,setDataAdd]=useState({             //STATE : The data we set to add to main data
      tema:'',
      ucebna:'',
@@ -82,7 +85,7 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
        newData[fieldName]=fieldValue;
        
        setDataPickedUU(newData);
-      //  console.log(dataPickedUU);
+      
     }
 
     const handleDataPickedUUConfirm=(event)=>{   // Set dataSubjects with new data we set for PICKED rows //Click button 'Save Change' to save
@@ -244,13 +247,14 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
       // <div className="app-container">
       <div className="app-container" >
         <form >
-          <table className='table table-hover' >
+          <table className='table table-hover table-bordered table-striped' >
               <thead>
                   <Tablehead/>
               </thead>
 
               <tbody>
-                  <RowAdd nameSubject={indexSubject} handleDataAdd={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
+                  {/* <RowAdd nameSubject={indexSubject} handleDataAdd={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/> */}
+                  <AddRow index={indexSubject} handleDataAdd={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm} dataSuggests={dataSuggests}/>
                   
                   
                   {dataSubjects.map((data,index)=>(
@@ -291,4 +295,4 @@ const TableBodyTo = ({dataSubs,indexSubject}) => {
   )
 }
 
-export default TableBodyTo
+export default PlanOfStudy

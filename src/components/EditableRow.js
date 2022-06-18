@@ -2,7 +2,7 @@ import React from 'react'
 
 const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataChangeConfirm}) => {
   return (
-    <tr>
+    <tr style={{'backgroundColor':'rgb(245, 182, 66)'}}>
       <td></td>
         <td>
             <input 
@@ -64,8 +64,8 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
             ></input>
         </td> */}
         <td>
-            <button type="submit" onClick={handleDataChangeConfirm}>Save</button>
-            <button type="button" onClick={handleCancelClick}>Cancel</button>
+            <button type="submit" className="btn btn-sm btn-outline-success" onClick={handleDataChangeConfirm}><i className="bi bi-clipboard-plus">Save</i></button>
+            <button type="button" className="btn btn-sm btn-outline-danger" onClick={handleCancelClick}><i class="bi bi-x-octagon-fill">Cancel</i></button>
         </td>
     </tr>
   )

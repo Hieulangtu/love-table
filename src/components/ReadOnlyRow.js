@@ -127,28 +127,28 @@ const ReadOnlyRow = ({data, handleEditClick,handleDeleteClick,handleRowMoveUp,
         {/* <td>{data.cas}</td>
         <td>{data.den}</td> */}
         <td>
-            <button className='btn btn-outline-primary' type='button' onClick={(event)=>handleEditClick(event,data)}>Edit</button>
-            <button className='btn btn-outline-primary' type="button" onClick={()=>handleDeleteClick(data.id)} >Delete</button>
+            <button className='btn btn-sm btn-outline-warning' type='button' onClick={(event)=>handleEditClick(event,data)}><i className="bi bi-pen">Edit</i></button>
+            <button className='btn btn-sm btn-outline-danger' type="button" onClick={()=>handleDeleteClick(data.id)} ><i className="bi bi-trash">Delete</i></button>
         </td>
         {
         (dataSubjects.length===1)
         ||
         (index===0
         &&<td>
-            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveDown(data.id)}>Move Down</button>
+            <button className='btn btn-sm btn-outline-primary' type='button' onClick={()=>handleRowMoveDown(data.id)}><i className="bi bi-arrow-down-circle-fill">Move Down</i></button>
           </td>
         )
         ||
         (index===(dataSubjects.length-1)
         &&<td>
-            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveUp(data.id)}>Move Up</button>
+            <button className='btn btn-sm btn-outline-primary' type='button' onClick={()=>handleRowMoveUp(data.id)}><i className="bi bi-arrow-up-circle-fill">Move Up</i></button>
           </td>
         )
         ||
         (true
         &&<td>
-            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveUp(data.id)}>Move Up</button>
-            <button className='btn btn-outline-primary' type='button' onClick={()=>handleRowMoveDown(data.id)}>Move Down</button>
+            <button className='btn btn-sm btn-outline-primary' type='button' onClick={()=>handleRowMoveUp(data.id)}><i className="bi bi-arrow-up-circle-fill">Move Up</i></button>
+            <button className='btn btn-sm btn-outline-primary' type='button' onClick={()=>handleRowMoveDown(data.id)}><i className="bi bi-arrow-down-circle-fill">Move Down</i></button>
           </td>
         )
         }

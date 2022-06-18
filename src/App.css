@@ -97,17 +97,18 @@ form * {
   font-size: 28px;
 }
 
-/* button{
+button{
   margin-top: 15px;
   cursor: pointer;
   transition-duration: 0.2s;
-  border: 2px solid #555555;;
+  border: 2px solid #555555;
+
 }
 
 button:hover {
   background-color: rgb(117, 201, 250); 
   color: white;
-} */
+}
 
 .check-input{
   width: 50px;
