@@ -40,6 +40,8 @@ ENV PYTHONUNBUFFERED=1
 COPY ./requirements.txt .
 RUN python -m pip install -r requirements.txt
 
+
+
 WORKDIR /app/js
 COPY --from=buildnode /usr/src/app/build/ /app/js/
 
