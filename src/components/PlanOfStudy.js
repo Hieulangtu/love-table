@@ -12,18 +12,19 @@ import AddRow from './AddRow';
 
 
 //Tak nepotrebuji this component - RowAdd
-function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
-   if(nameSubject===0){ 
-    return <AddRow0 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-   }else if(nameSubject===1){
-    return <AddRow1 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-   }else if(nameSubject===2){
-    return <AddRow2 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-   }else{
-    return <AddRow3 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
-   }
+//nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
+// function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ 
+//    if(nameSubject===0){ 
+//     return <AddRow0 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
+//    }else if(nameSubject===1){
+//     return <AddRow1 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
+//    }else if(nameSubject===2){
+//     return <AddRow2 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
+//    }else{
+//     return <AddRow3 handleDataAdd ={handleDataAdd} handleDataAddConfirm={handleDataAddConfirm}/>
+//    }
 
-}
+// }
 
 
 
