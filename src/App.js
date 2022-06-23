@@ -62,12 +62,20 @@ const Main=()=>{
 }
 
 const App=()=>{
-  const [startStav,setStartStav]=useState(false) ;
+  const storageUser=JSON.parse(localStorage.getItem('historyUser'))
+  const [startStav,setStartStav]=useState(storageUser?? false) ;
   const handleLogInSucceed=()=>{
     setStartStav(true);
   }
+
+  const handleRemember=()=>{
+    const jsonHistoryUser=JSON.stringify("true");
+    localStorage.setItem('historyUser',jsonHistoryUser);
+    console.log(5);
+  }
+
   return(
-    startStav===false? <LogIn handleLogInSucceed={handleLogInSucceed}/> : <Main/> 
+    startStav===false? <LogIn handleLogInSucceed={handleLogInSucceed} handleRemember={handleRemember}/> : <Main/> 
   )
 }
 
