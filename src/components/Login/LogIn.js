@@ -1,8 +1,7 @@
-
 import React, { useState, Fragment } from 'react'
 import "./LogIn.css"
 
-const LogIn = ({handleLogInSucceed}) => {
+const LogIn = ({handleLogInSucceed,handleRemember}) => {
   const dataUser=[{uname:'hieu',psw:'1905'},{uname:'lam',psw:'0211'}];
   const [dataLogIn,setDataLogIn]=useState({uname:'',psw:''});
 //   const [dataUser,setDataUser]=useState([{uname:'hieu',psw:'1905'},{uname:'lam',psw:'0211'}]);
@@ -25,24 +24,36 @@ const LogIn = ({handleLogInSucceed}) => {
             return true;
         }
     }
-
     return false;
 }
 
+
+  function checkRemember() {
+    var checkOrNot = document.getElementById("remember").checked;
+    if(checkOrNot===true){
+        return true
+    }else{
+        return false
+    }
+  }
+
   const handleLogin=(event)=>{
-   
-    if(containsObject(dataLogIn, dataUser)){
-        handleLogInSucceed();
+    event.preventDefault();
+    if(containsObject(dataLogIn, dataUser)){ 
+        handleLogInSucceed(); 
+        if(checkRemember()===true){
+            handleRemember(); 
+        }
+        
     }else{
         alert("wrong name or number !")
     }
-     
+    console.log(checkRemember());
   }
-
 
   return (
     <Fragment>
-<h2>Login</h2>
+<h1>Login</h1>
 
 <form >
   <div class="imgcontainer">
@@ -61,7 +72,7 @@ const LogIn = ({handleLogInSucceed}) => {
     <button className='buttonLogIn' type="button" onClick={handleLogin}>Login</button>
     <br></br>
     <label>
-      <input type="checkbox" name="remember"/> Remember me
+      <input className="form-check-input" id='remember' type="checkbox" name="remember"/> Remember me
     </label>
   </div>
 
