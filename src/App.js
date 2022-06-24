@@ -6,6 +6,7 @@ import data from "./mock-data.json"
 import dataSuggests from "./suggests.json"
 import PlanOfStudy from "./components/PlanOfStudy";
 import Navbar from "./components/Navbar";
+import LogIn from "./components/Login/LogIn";
 
 function LabelAndTable({dataSubs,indexSubject}){
   const [showInformatika,setShowInformatika]=useState(false);
@@ -43,7 +44,7 @@ function LabelAndTable({dataSubs,indexSubject}){
   }
 }
 
-const App=()=>{
+const Main=()=>{
 
       // const [bigData,setBigData]=useState(data);
       const bigData=data;
@@ -60,17 +61,23 @@ const App=()=>{
 
 }
 
+const App=()=>{
+  const storageUser=JSON.parse(localStorage.getItem('historyUser'))
+  const [startStav,setStartStav]=useState(storageUser?? false) ;
+  const handleLogInSucceed=()=>{
+    setStartStav(true);
+  }
 
+  const handleRemember=()=>{
+    const jsonHistoryUser=JSON.stringify("true");
+    localStorage.setItem('historyUser',jsonHistoryUser);
+    console.log(5);
+  }
 
-// function App1(props){
-//   const [infoShow,setInfoShow]=useState(false)
-//   return(
-//     <Fragment>
-//       <button type='button' onClick={()=>setInfoShow(true)}>Informatika</button>
-//       {infoShow&&<App/>}
-//     </Fragment>
-//   )
-// }
+  return(
+    startStav===false? <LogIn handleLogInSucceed={handleLogInSucceed} handleRemember={handleRemember}/> : <Main/> 
+  )
+}
 
 
 export default App;
