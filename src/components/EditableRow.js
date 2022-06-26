@@ -11,7 +11,7 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
               required="required" 
               placeholder="Enter the topic..."
               value={dataChange.tema}
-            //   value="helo con cac"   value là giá trị. Áp dụng : có cmnr sẵn trên ô input cho mình sửa
+            //   value="helo con cac"   value là giá trị. Áp dụng : có cmnr sẵn trên ô input cho mình sửa adu adu
               onChange={handleDataChange}
             ></input>
         </td>
