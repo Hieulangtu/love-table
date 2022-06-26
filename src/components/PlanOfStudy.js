@@ -6,8 +6,8 @@ import Tablehead from './Tablehead';
 import PickedRowUU from './PickedRowUU';
 import AddRow from './AddRow';
 
-// 2
-//Tak nepotrebuji this component - RowAdd Thay doi vcl luon
+// 1
+//Tak nepotrebuji this component - RowAdd
 //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
 // function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ 
 //    if(nameSubject===0){ 
