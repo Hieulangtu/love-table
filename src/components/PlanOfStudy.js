@@ -3,10 +3,6 @@ import {nanoid} from 'nanoid'
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 import Tablehead from './Tablehead';
-import AddRow0 from './AddRow0';
-import AddRow1 from './AddRow1';
-import AddRow2 from './AddRow2';
-import AddRow3 from './AddRow3';
 import PickedRowUU from './PickedRowUU';
 import AddRow from './AddRow';
 
@@ -59,55 +55,8 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
    
 
 
-    const handlePickedDataIdsUU=(datID)=>{ // handle list of PICKED rows //Click checkbox of each row to indentify the rows to change Ucebna and Ucitel
-      
-      // const isPicked=pickedDataIdsUU.includes(datID);
-      var newPickedDataIdsUU=[...pickedDataIdsUU];
-
-      if(pickedDataIdsUU.includes(datID)){
-        newPickedDataIdsUU = newPickedDataIdsUU.filter(item=>item !== datID);
-      }else{
-        newPickedDataIdsUU =[...newPickedDataIdsUU,datID];
-      }
-      console.log('here',pickedDataIdsUU);
-      setPickedDataIdsUU(newPickedDataIdsUU);
-
-      
-
-    }
-
-    const handleDataPickedUU=(event)=>{         // handle data we set for PICKED rows //Fill information you want to add in Input tags
-      //  event.preventDefault();
-
-       const fieldName=event.target.getAttribute('name');
-       const fieldValue=event.target.value;
-
-       const newData={...dataPickedUU};
-       newData[fieldName]=fieldValue;
-       
-       setDataPickedUU(newData);
-      
-    }
-
-    const handleDataPickedUUConfirm=(event)=>{   // Set dataSubjects with new data we set for PICKED rows //Click button 'Save Change' to save
-      event.preventDefault();
-      const newDataSubjects=[...dataSubjects];
-      newDataSubjects.map((dat,index)=>{
-        if(pickedDataIdsUU.includes(dat.id)){
-          if(dataPickedUU.ucebna !== ''){newDataSubjects[index].ucebna=dataPickedUU.ucebna;}
-          if(dataPickedUU.ucitel !== ''){newDataSubjects[index].ucitel=dataPickedUU.ucitel;}                    
-        }
-      })
-      //Save to local Storage
-      const jsonDataSubjects=JSON.stringify(newDataSubjects);
-      localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
-
-      setDataSubjects(newDataSubjects);
-      setPickedDataIdsUU([]);
-      setDataPickedUU({ucebna:'',ucitel:''});
-
-    }
     
+    ///////////////////////  function in AddRow
     const handleDataAdd=(event)=>{   // handle data that we set to add (data of new row)  //Fill information you want to add in Input tags        
       event.preventDefault();
 
@@ -118,18 +67,6 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
       newData[fieldName]=fieldValue;
 
       setDataAdd(newData);
-    }
-
-    const handleDataChange=(event)=>{   // handle data we set to edit/change for each row //Fill information you want to change in Input tags
-      event.preventDefault();
-      const fieldName=event.target.getAttribute('name');
-      const fieldValue=event.target.value;
-
-      const newData={...dataChange};
-      newData[fieldName]=fieldValue;
-
-      setDataChange(newData);
-
     }
 
     const handleDataAddConfirm=(event)=>{   //Set dataSubjects with new data  //Click button Add in first row to add new row
@@ -152,6 +89,80 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
       setDataSubjects(newDataSubjects);
     }
+
+    ///////////////////// function in ReadOnlyRow
+   const handleEditClick=(event,dat)=>{  //click button edit in each row to edit change in that row
+    event.preventDefault();
+    setEditDataId(dat.id);
+
+    const formValue={ 
+      tema:dat.tema,
+      ucebna:dat.ucebna,
+      ucitel:dat.ucitel,
+      cas:dat.cas,
+      den:dat.den
+
+    }
+    setDataChange(formValue);
+
+  }
+
+  const handleDeleteClick=(dataIdtoDelte)=>{
+    const newDataSubjects=[...dataSubjects];
+
+    const index=dataSubjects.findIndex((dat)=>dat.id===dataIdtoDelte);
+
+    newDataSubjects.splice(index,1);  //index là vị trí, 1 là số phần tử muốn xóa
+    //Save to local Storage
+    const jsonDataSubjects=JSON.stringify(newDataSubjects);
+    localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
+    setDataSubjects(newDataSubjects);
+  }
+
+  const handleRowMoveDown=(dataIdToMoveDown)=>{ //Click button Move down to change the position of the row
+   const newDataSubjects=[...dataSubjects];
+
+   const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveDown);
+   const temData=newDataSubjects[index];
+   newDataSubjects[index]=newDataSubjects[index+1];
+   newDataSubjects[index+1]=temData;
+   //Save to local Storage
+   const jsonDataSubjects=JSON.stringify(newDataSubjects);
+   localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
+   setDataSubjects(newDataSubjects);
+
+   
+
+  }
+
+  const handleRowMoveUp=(dataIdToMoveUp)=>{ //Click button Move up to change the position of the row
+   const newDataSubjects=[...dataSubjects];
+
+   const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveUp);
+   const temData=newDataSubjects[index];
+   newDataSubjects[index]=newDataSubjects[index-1];
+   newDataSubjects[index-1]=temData;
+   //Save to local Storage
+   const jsonDataSubjects=JSON.stringify(newDataSubjects);
+   localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
+   setDataSubjects(newDataSubjects);
+
+  }
+
+/////////////////////////// function in EditableRow
+    const handleDataChange=(event)=>{   // handle data we set to edit/change for each row //Fill information you want to change in Input tags
+      event.preventDefault();
+      const fieldName=event.target.getAttribute('name');
+      const fieldValue=event.target.value;
+
+      const newData={...dataChange};
+      newData[fieldName]=fieldValue;
+
+      setDataChange(newData);
+
+    }
+
+    
 
     const handleDataChangeConfirm=(event)=>{   //Set dataSubjects with new data (edit change a row) //Click button Save to save chnages
       event.preventDefault();      //nếu ko preventdefault, onSubmit sẽ reflesh lại trang
@@ -179,68 +190,64 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
     }
 
-   const handleEditClick=(event,dat)=>{  //click button edit in each row to edit change in that row
-     event.preventDefault();
-     setEditDataId(dat.id);
-
-     const formValue={ 
-       tema:dat.tema,
-       ucebna:dat.ucebna,
-       ucitel:dat.ucitel,
-       cas:dat.cas,
-       den:dat.den
-
-     }
-     setDataChange(formValue);
-
-   }
 
    const handleCancelClick=(event)=>{ //Click button Cancel in each row to cancel the editing
      event.preventDefault();
      setEditDataId(null);
    }
 
-   const handleDeleteClick=(dataIdtoDelte)=>{
-     const newDataSubjects=[...dataSubjects];
 
-     const index=dataSubjects.findIndex((dat)=>dat.id===dataIdtoDelte);
+   ///////////// function in PickedRowUU
+   const handlePickedDataIdsUU=(datID)=>{ // handle list of PICKED rows //Click checkbox of each row to indentify the rows to change Ucebna and Ucitel
+      
+    // const isPicked=pickedDataIdsUU.includes(datID);
+    var newPickedDataIdsUU=[...pickedDataIdsUU];
 
-     newDataSubjects.splice(index,1);  //index là vị trí, 1 là số phần tử muốn xóa
-     //Save to local Storage
-     const jsonDataSubjects=JSON.stringify(newDataSubjects);
-     localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
-     setDataSubjects(newDataSubjects);
-   }
-
-   const handleRowMoveDown=(dataIdToMoveDown)=>{ //Click button Move down to change the position of the row
-    const newDataSubjects=[...dataSubjects];
-
-    const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveDown);
-    const temData=newDataSubjects[index];
-    newDataSubjects[index]=newDataSubjects[index+1];
-    newDataSubjects[index+1]=temData;
-    //Save to local Storage
-    const jsonDataSubjects=JSON.stringify(newDataSubjects);
-    localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
-    setDataSubjects(newDataSubjects);
+    if(pickedDataIdsUU.includes(datID)){
+      newPickedDataIdsUU = newPickedDataIdsUU.filter(item=>item !== datID);
+    }else{
+      newPickedDataIdsUU =[...newPickedDataIdsUU,datID];
+    }
+    console.log('here',pickedDataIdsUU);
+    setPickedDataIdsUU(newPickedDataIdsUU);
 
     
 
-   }
+  }
+    
+  const handleDataPickedUU=(event)=>{         // handle data we set for PICKED rows //Fill information you want to add in Input tags
+    //  event.preventDefault();
 
-   const handleRowMoveUp=(dataIdToMoveUp)=>{ //Click button Move up to change the position of the row
+     const fieldName=event.target.getAttribute('name');
+     const fieldValue=event.target.value;
+
+     const newData={...dataPickedUU};
+     newData[fieldName]=fieldValue;
+     
+     setDataPickedUU(newData);
+    
+  }
+
+  const handleDataPickedUUConfirm=(event)=>{   // Set dataSubjects with new data we set for PICKED rows //Click button 'Save Change' to save
+    event.preventDefault();
     const newDataSubjects=[...dataSubjects];
-
-    const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveUp);
-    const temData=newDataSubjects[index];
-    newDataSubjects[index]=newDataSubjects[index-1];
-    newDataSubjects[index-1]=temData;
+    newDataSubjects.map((dat,index)=>{
+      if(pickedDataIdsUU.includes(dat.id)){
+        if(dataPickedUU.ucebna !== ''){newDataSubjects[index].ucebna=dataPickedUU.ucebna;}
+        if(dataPickedUU.ucitel !== ''){newDataSubjects[index].ucitel=dataPickedUU.ucitel;}                    
+      }
+    })
     //Save to local Storage
     const jsonDataSubjects=JSON.stringify(newDataSubjects);
     localStorage.setItem('subject'+indexSubject,jsonDataSubjects);
-    setDataSubjects(newDataSubjects);
 
-   }
+    setDataSubjects(newDataSubjects);
+    setPickedDataIdsUU([]);
+    setDataPickedUU({ucebna:'',ucitel:''});
+
+  }
+
+   
 
    
  
