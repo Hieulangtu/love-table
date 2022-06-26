@@ -5,7 +5,7 @@ import EditableRow from "./EditableRow";
 import Tablehead from './Tablehead';
 import PickedRowUU from './PickedRowUU';
 import AddRow from './AddRow';
-//2
+
 //1
 //Tak nepotrebuji this component - RowAdd
 //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
