@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-// Add những input và gợi ý cho môn 0 là : Informatika thu nghiem ty 123
+// Add những input và gợi ý cho môn 0 là : Informatika thu nghiem ty 123 adu
 const AddRow0 = ({handleDataAdd,handleDataAddConfirm}) => {
   return (
     <tr>  
