@@ -6,13 +6,8 @@ import Tablehead from './Tablehead';
 import PickedRowUU from './PickedRowUU';
 import AddRow from './AddRow';
 
-<<<<<<< HEAD
-
-//Tak nepotrebuji this component - RowAdd add con kak
-=======
 //1 sua cai dit me may
 //Tak nepotrebuji this component - RowAdd
->>>>>>> 8567e8d16756ca61968dc62f735797084261912a
 //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
 // function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ 
 //    if(nameSubject===0){ 

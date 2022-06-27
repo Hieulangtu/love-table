@@ -1,5 +1,16 @@
 import React from 'react'
 
+/*
+Function: AddRow 
+A component to take the data from the 'adding' row, save them to the general data and add them to a new row.
+
+Props:
+handleDataAdd: handle the adding data
+handleDataAddConfirm: allow to add the 'adding' data to the general data(dataSubjects)
+dataSuggests: suggesting data list
+index: index of the suggesting data list.
+
+*/
 const AddRow = ({handleDataAdd,handleDataAddConfirm,dataSuggests,index}) => {
   return (
     <tr>  
