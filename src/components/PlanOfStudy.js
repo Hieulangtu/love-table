@@ -6,7 +6,7 @@ import Tablehead from './Tablehead';
 import PickedRowUU from './PickedRowUU';
 import AddRow from './AddRow';
 
-//1 sua cai dit me may
+// alo :)))) may co the tim buc anh nao dep hon khong??
 //Tak nepotrebuji this component - RowAdd
 //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
 // function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ 
