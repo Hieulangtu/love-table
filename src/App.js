@@ -7,6 +7,8 @@ import dataSuggests from "./suggests.json"
 import PlanOfStudy from "./components/PlanOfStudy";
 import Navbar from "./components/Navbar";
 import LogIn from "./components/Login/LogIn";
+import PageIntroduction from "./components/PageIntroduction";
+import PageAuthors from "./components/PageAuthors";
 
 function LabelAndTable({dataSubs,indexSubject}){
   const [showInformatika,setShowInformatika]=useState(false);
@@ -71,12 +73,27 @@ const App=()=>{
   const handleRemember=()=>{
     const jsonHistoryUser=JSON.stringify("true");
     localStorage.setItem('historyUser',jsonHistoryUser);
-    console.log(5);
+    
   }
-
+  
+  let page;
+  switch(window.location.pathname){
+    case "/":
+      page=<Main/>
+      break;
+    case "/introduction":
+      page=<PageIntroduction/>
+      break;
+    case "/authors":
+      page=<PageAuthors/>
+      break;
+  }
   return(
-    startStav===false? <LogIn handleLogInSucceed={handleLogInSucceed} handleRemember={handleRemember}/> : <Main/> 
+    startStav===false? <LogIn handleLogInSucceed={handleLogInSucceed} handleRemember={handleRemember}/> : <div>{page}</div>
   )
+  // return(
+  //   startStav===false? <LogIn handleLogInSucceed={handleLogInSucceed} handleRemember={handleRemember}/> : <Main/> 
+  // )
 }
 
 
