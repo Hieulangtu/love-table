@@ -6,7 +6,7 @@ import Tablehead from './Tablehead';
 import PickedRowUU from './PickedRowUU';
 import AddRow from './AddRow';
 
-// alo :)))) may co the tim buc anh nao dep hon khong??
+// alo :)))) may co the tim buc anh nao dep hon khong?
 //Tak nepotrebuji this component - RowAdd
 //nameSubjects : 0-Informatika, 1-Math, 2-Teorie Graf, 3-English
 // function RowAdd({nameSubject,handleDataAdd,handleDataAddConfirm}){ 
@@ -57,7 +57,12 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
     
     ///////////////////////  function in AddRow
-    const handleDataAdd=(event)=>{   // handle data that we set to add (data of new row)  //Fill information you want to add in Input tags        
+    /*
+    Function: handleDataAdd
+     Handle data that we set to add (data of new row)
+     Save them to the 'newData' and then add them to the 'dataAdd' by useState
+    */
+    const handleDataAdd=(event)=>{          
       event.preventDefault();
 
       const fieldName=event.target.getAttribute('name');
@@ -69,7 +74,12 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
       setDataAdd(newData);
     }
 
-    const handleDataAddConfirm=(event)=>{   //Set dataSubjects with new data  //Click button Add in first row to add new row
+    /*
+    Function: handleDataAddConfirm
+     Click button 'Add', it will take the data from the 'dataAdd' and show them in a new row
+     Save them to the general data (dataSubjects)
+    */
+    const handleDataAddConfirm=(event)=>{    
       event.preventDefault(); //nếu ko preventdefault, onSubmit sẽ reflesh lại trang
 
       const newData={
@@ -91,7 +101,12 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     }
 
     ///////////////////// function in ReadOnlyRow
-   const handleEditClick=(event,dat)=>{  //click button edit in each row to edit change in that row
+    /*
+    Function: handleEditClick
+     Click button 'Edit' in each row to change the data in that row
+     The changing data will be saved in the 'dataChange' by useState
+    */
+   const handleEditClick=(event,dat)=>{  
     event.preventDefault();
     setEditDataId(dat.id);
 
@@ -107,6 +122,14 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
   }
 
+  /*
+    Function: handleDeleteClick
+     Click button 'Delete' in each row to delete the data in that row
+    Args:
+    dataIdtoDelte: the id of the row that we want to delete.
+    we'll make a copy of 'dataSubjects' as 'newDataSubjects'.
+    And then delete the data in the 'newDataSubjects' then save it in 'dataSubjects' by useState
+    */
   const handleDeleteClick=(dataIdtoDelte)=>{
     const newDataSubjects=[...dataSubjects];
 
@@ -119,7 +142,14 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     setDataSubjects(newDataSubjects);
   }
 
-  const handleRowMoveDown=(dataIdToMoveDown)=>{ //Click button Move down to change the position of the row
+  /*
+    Function: handleRowMoveDown
+     Click button 'Move Down' to move the position of the row down 
+    Args:
+    dataIdToMoveDown: the id of the row that we want to move down.
+    use 'temData' as an intermediate variable to swap them.
+    */
+  const handleRowMoveDown=(dataIdToMoveDown)=>{ 
    const newDataSubjects=[...dataSubjects];
 
    const index=dataSubjects.findIndex((dat)=>dat.id===dataIdToMoveDown);
@@ -135,6 +165,13 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
   }
 
+  /*
+    Function: handleRowMoveUp
+     Click button 'Move Up' to move the position of the row up
+    Args:
+    dataIdToMoveUp: the id of the row that we want to move up.
+    use 'temData' as an intermediate variable to swap them.
+    */
   const handleRowMoveUp=(dataIdToMoveUp)=>{ //Click button Move up to change the position of the row
    const newDataSubjects=[...dataSubjects];
 
@@ -150,6 +187,13 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
   }
 
 /////////////////////////// function in EditableRow
+
+    /*
+    Function: handleDataChange
+     Handle data that we set to change 
+     Save them to the 'newData' and then add them to the 'dataAdd' by useState
+     (similar to the function 'handleDataAdd')
+    */
     const handleDataChange=(event)=>{   // handle data we set to edit/change for each row //Fill information you want to change in Input tags
       event.preventDefault();
       const fieldName=event.target.getAttribute('name');
@@ -163,7 +207,12 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     }
 
     
-
+    /*
+    Function: handleDataChangeConfirm
+     Click button 'Save', it will save the changing data to the 'DataChanged'.
+     find the id of the changing row, save the changing data instead of the old data.
+     Save them to the general data (dataSubjects)
+    */
     const handleDataChangeConfirm=(event)=>{   //Set dataSubjects with new data (edit change a row) //Click button Save to save chnages
       event.preventDefault();      //nếu ko preventdefault, onSubmit sẽ reflesh lại trang
       console.log('cc');
@@ -190,14 +239,21 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
     }
 
-
-   const handleCancelClick=(event)=>{ //Click button Cancel in each row to cancel the editing
+    /*
+    Function: handleCancelClick
+     Click the button 'Cancel' to cancel the editing.
+    */
+   const handleCancelClick=(event)=>{ 
      event.preventDefault();
      setEditDataId(null);
    }
 
 
    ///////////// function in PickedRowUU
+   /*
+    Function: handlePickedDataIdsUU
+    Find the IDs of the picked rows and save them to the 'pickedDataIdsUU' by useState
+    */
    const handlePickedDataIdsUU=(datID)=>{ // handle list of PICKED rows //Click checkbox of each row to indentify the rows to change Ucebna and Ucitel
       
     // const isPicked=pickedDataIdsUU.includes(datID);
@@ -215,6 +271,12 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
 
   }
     
+  /*
+    Function: handleDataPickedUU
+     Handle data that we set in the picked rows
+     Save them to the 'newData' and then add them to the 'dataPickedUU' by useState
+     (similar to the function 'handleDataAdd')
+    */
   const handleDataPickedUU=(event)=>{         // handle data we set for PICKED rows //Fill information you want to add in Input tags
     //  event.preventDefault();
 
@@ -228,7 +290,12 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     
   }
 
-  const handleDataPickedUUConfirm=(event)=>{   // Set dataSubjects with new data we set for PICKED rows //Click button 'Save Change' to save
+  /*
+    Function: handleDataPickedUUConfirm
+     Click button 'Save Change' to save the data to the picked rows.
+     save them in the general data (dataSubjects)
+    */
+  const handleDataPickedUUConfirm=(event)=>{   // Set dataSubjects with new data we set for PICKED rows 
     event.preventDefault();
     const newDataSubjects=[...dataSubjects];
     newDataSubjects.map((dat,index)=>{

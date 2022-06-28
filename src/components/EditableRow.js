@@ -1,5 +1,15 @@
 import React from 'react'
 
+/*
+Function: EditableRow 
+A component to take the data from the 'editing' row, save them instead of the old data in that row.
+
+Props:
+dataChange: a place to save the changing data
+handleDataChange: handle the editing data
+handleCancelClick: cancel adding the 'editing' data and keep the old data
+handleDataChangeConfirm: allow to add the 'editing' data instead of the old data
+*/
 const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataChangeConfirm}) => {
   return (
     <tr style={{'backgroundColor':'rgb(245, 182, 66)'}}>
@@ -35,34 +45,7 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
               onChange={handleDataChange}
             ></input>
         </td>
-        {/* <td>
         
-          <select 
-               name="cas" 
-               id="time-select"
-               required="required"
-               placeholder='choose the times'
-               value={dataChange.cas}
-               onChange={handleDataChange}> 
-            <option value="">--choose the time--</option> 
-            <option value="8:00-9:30">8:00-9:30</option>
-            <option value="9:50-11:20">9:50-11:20</option>
-            <option value="11:40-13:10">11:40-13:10</option>
-            <option value="14:30-16:00">14:30-16:00</option>
-            <option value="16:20-17:50">16:20-17:50</option>
-            <option value="18:10-19:40">18:10-19:40</option>
-          </select>
-        </td>
-        <td>
-            <input 
-              type="date"
-              name="den" 
-              required="required" 
-              placeholder="Enter the day..."
-              value={dataChange.den}
-              onChange={handleDataChange}
-            ></input>
-        </td> */}
         <td>
             <button type="submit" className="btn btn-sm btn-outline-success" onClick={handleDataChangeConfirm}><i className="bi bi-clipboard-plus">Save</i></button>
             <button type="button" className="btn btn-sm btn-outline-danger" onClick={handleCancelClick}><i class="bi bi-x-octagon-fill">Cancel</i></button>
