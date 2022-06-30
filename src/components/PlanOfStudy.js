@@ -23,7 +23,13 @@ import AddRow from './AddRow';
 // }
 
 
-
+/*
+PlanOfStudy: main component, return a table that we can add, change the topics of a subject
+props:
+ dataSubs : data of subjects in mock-data.json
+ indexSubjects: index of dataSubs
+ dataSuggests: data suggests in addRow
+*/
 const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
    const storageDataSubjects=JSON.parse(localStorage.getItem('subject'+indexSubject))
   
@@ -60,7 +66,7 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     /*
     Function: handleDataAdd
      Handle data that we set to add (data of new row)
-     Save them to the 'newData' and then add them to the 'dataAdd' by useState
+     
     */
     const handleDataAdd=(event)=>{          
       event.preventDefault();
@@ -242,6 +248,7 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     /*
     Function: handleCancelClick
      Click the button 'Cancel' to cancel the editing.
+     setEditDataId = null
     */
    const handleCancelClick=(event)=>{ 
      event.preventDefault();

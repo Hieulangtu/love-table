@@ -5,15 +5,15 @@ Function: EditableRow
 A component to take the data from the 'editing' row, save them instead of the old data in that row.
 
 Props:
-dataChange: a place to save the changing data
-handleDataChange: handle the editing data
+dataChange: data we set to change
+handleDataChange: handle the dataChange
 handleCancelClick: cancel adding the 'editing' data and keep the old data
-handleDataChangeConfirm: allow to add the 'editing' data instead of the old data
+handleDataChangeConfirm: allow to use dataChange (data which was edited) instead of the old data
 */
 const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataChangeConfirm}) => {
   return (
     <tr style={{'backgroundColor':'rgb(245, 182, 66)'}}>
-      <td></td>
+        <td style={{'backgroundColor':'rgb(245, 182, 66)'}}></td>
         <td style={{'backgroundColor':'rgb(245, 182, 66)'}}>
             <input 
               type="text"

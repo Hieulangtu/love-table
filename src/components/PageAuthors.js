@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react'
 import Navbar from './Navbar'
 
+
+/*
+Component: PageAuthors , return list of component Authors. This is a page
+*/
 const PageAuthors = () => {
   const authors =[
     {"alt":"Nguyễn Trung Hiếu",    "title":"click to see informations",        
@@ -31,6 +35,10 @@ const PageAuthors = () => {
   )
 }
 
+/*
+ Component InforAuthor, return image , basic informations of one person
+ property: author - Information of one person
+*/
 const InforAuthor=({author})=>{
 
     return(

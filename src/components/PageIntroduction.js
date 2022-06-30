@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react'
 import Navbar from './Navbar'
 
+/*
+Component: PageIntroduction, simple page to introduce the web
+ 
+
+*/
 const PageIntroduction = () => {
   return (
     <Fragment>

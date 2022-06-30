@@ -1,6 +1,12 @@
 import React, { useState, Fragment } from 'react'
 import "./LogIn.css"
 
+/*
+Component LogIn: return a place to log in user name and password
+props:
+ handleLogInSucceed: check succeed or not
+ handleRemember: check do you want to remember or not
+*/ 
 const LogIn = ({handleLogInSucceed,handleRemember}) => {
   const dataUser=[{uname:'hieu',psw:'1905'},{uname:'lam',psw:'0211'}];
   const [dataLogIn,setDataLogIn]=useState({uname:'',psw:''});
@@ -46,7 +52,7 @@ const LogIn = ({handleLogInSucceed,handleRemember}) => {
         }
         
     }else{
-        alert("wrong name or number !")
+        alert("wrong Username or Password !")
     }
     console.log(checkRemember());
   }

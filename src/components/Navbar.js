@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 
+
+/*
+Component Navbar : navigation bar, Click to go to another page : Home, Authors and Introduction
+                                   also return a switch button Darkmode
+*/
 const Navbar = () => {
 
+  // Function darkLightMode to set className for the tag to decide if they are dark or white
   function darkLightMode() {
     var element = document.body;
     var kt=document.getElementById("mySwitch");
@@ -13,7 +19,7 @@ const Navbar = () => {
         row.className="table table-hover table-dark";
       }
       
-      console.log(rows[0])
+     
     }else{
       element.className="light-mode";
       for(let row of rows ){

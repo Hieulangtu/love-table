@@ -1,5 +1,6 @@
 import React from 'react'
 
+/* Component: Head of table */
 const Tablehead = () => {
   return (
     <tr>

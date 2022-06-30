@@ -20,7 +20,7 @@ const PickedRowUU = ({handleDataPickedUU,handleDataPickedUUConfirm}) => {
               name="ucebna" 
               required="required" 
               placeholder="Enter the topic..."
-            //   value={dataChange.tema}
+            
             //   value="helo con cac"   value là giá trị. Áp dụng : có cmnr sẵn trên ô input cho mình sửa
               onChange={handleDataPickedUU}
             ></input>
@@ -31,7 +31,7 @@ const PickedRowUU = ({handleDataPickedUU,handleDataPickedUUConfirm}) => {
               name="ucitel" 
               required="required" 
               placeholder="Enter the lecturer..."
-            //   value={dataChange.ucitel}
+            
               onChange={handleDataPickedUU}
             ></input>
        </td>
@@ -39,7 +39,7 @@ const PickedRowUU = ({handleDataPickedUU,handleDataPickedUUConfirm}) => {
           <button type='button' className="btn btn-bm btn-outline-success" onClick={handleDataPickedUUConfirm} ><i className="bi bi-clipboard-plus">Save Changes</i></button>
        </td>
        <td>
-        
+
        </td>
        {/* <td style={{'background-color': 'aquamarine'}}></td> */}
     </tr>

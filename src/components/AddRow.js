@@ -2,7 +2,7 @@ import React from 'react'
 
 /*
 Function: AddRow 
-A component to take the data from the 'adding' row, save them to the general data and add them to a new row.
+A component to set the data we want to add, save them to the general data and add them to a new row.
 
 Props:
 handleDataAdd: handle the adding data

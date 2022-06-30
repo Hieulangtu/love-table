@@ -12,8 +12,8 @@ handleRowMoveUp: handle the button 'Move Up'
 handleRowMoveDown: handle the button 'Move Down'
 dataSubjects: general data
 index: index of this row in the general data
-pickedDataIdsUU: IDs of the picked rows
-handlePickedDataIdsUU: handle with the ids of picked rows
+pickedDataIdsUU: list IDs of the picked rows
+handlePickedDataIdsUU: handle with the list of id of picked rows
 
 */
 const ReadOnlyRow = ({data, handleEditClick,handleDeleteClick,handleRowMoveUp,
