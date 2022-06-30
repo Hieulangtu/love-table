@@ -5,12 +5,20 @@ const Navbar = () => {
   function darkLightMode() {
     var element = document.body;
     var kt=document.getElementById("mySwitch");
+    var rows=document.getElementsByTagName('table');
      
     if(kt.checked===true ){
       element.className="dark-mode";
+      for(let row of rows ){
+        row.className="table table-hover table-dark";
+      }
       
+      console.log(rows[0])
     }else{
       element.className="light-mode";
+      for(let row of rows ){
+        row.className="table table-hover table-bordered table-striped";
+      }
    
     }
   }

@@ -14,7 +14,7 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
   return (
     <tr style={{'backgroundColor':'rgb(245, 182, 66)'}}>
       <td></td>
-        <td>
+        <td style={{'backgroundColor':'rgb(245, 182, 66)'}}>
             <input 
               type="text"
               name="tema" 
@@ -25,7 +25,7 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
               onChange={handleDataChange}
             ></input>
         </td>
-        <td>
+        <td style={{'backgroundColor':'rgb(245, 182, 66)'}}>
             <input 
               type="text"
               name="ucebna" 
@@ -35,7 +35,7 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
               onChange={handleDataChange}
              ></input>
         </td>
-        <td>
+        <td style={{'backgroundColor':'rgb(245, 182, 66)'}}>
             <input 
               type="text"
               name="ucitel" 
@@ -46,9 +46,12 @@ const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataCh
             ></input>
         </td>
         
-        <td>
+        <td style={{'backgroundColor':'rgb(245, 182, 66)'}}>
             <button type="submit" className="btn btn-sm btn-outline-success" onClick={handleDataChangeConfirm}><i className="bi bi-clipboard-plus">Save</i></button>
             <button type="button" className="btn btn-sm btn-outline-danger" onClick={handleCancelClick}><i class="bi bi-x-octagon-fill">Cancel</i></button>
+        </td>
+        <td style={{'backgroundColor':'rgb(245, 182, 66)'}}>
+
         </td>
     </tr>
   )

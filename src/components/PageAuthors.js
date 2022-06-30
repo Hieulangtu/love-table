@@ -6,7 +6,7 @@ const PageAuthors = () => {
     {"alt":"Nguyễn Trung Hiếu",    "title":"click to see informations",        
     "src":"https://scontent-prg1-1.xx.fbcdn.net/v/t39.30808-6/241966064_1719738094895177_6364275828077909770_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=8A_uxBPY1-QAX9wbWet&_nc_ht=scontent-prg1-1.xx&oh=00_AT9eTVi7kvwXPBtAH8oSiitKK3DBCtg0toTZmmlrEQTp4w&oe=62BF3EDB",
     "name":"Nguyễn Trung Hiếu",       "class":"22-5KB-C",              "phonenumber":"19052045",
-    "gmail":"trunghieu.nguyen@unob,cz",           
+    "gmail":"trunghieu.nguyen@unob.cz",           
     "facebook":"https://www.facebook.com/da.r.bou.3/",           
     "instagram":"https://www.instagram.com/hieudaren19/"},
 

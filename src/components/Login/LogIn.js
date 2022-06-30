@@ -17,7 +17,7 @@ const LogIn = ({handleLogInSucceed,handleRemember}) => {
     console.log(dataLogIn);
   }
 
-  function containsObject(obj, list) {
+  function containPassword(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
         if (list[i].uname === obj.uname && list[i].psw === obj.psw) {
@@ -39,7 +39,7 @@ const LogIn = ({handleLogInSucceed,handleRemember}) => {
 
   const handleLogin=(event)=>{
     event.preventDefault();
-    if(containsObject(dataLogIn, dataUser)){ 
+    if(containPassword(dataLogIn, dataUser)){ 
         handleLogInSucceed(); 
         if(checkRemember()===true){
             handleRemember(); 

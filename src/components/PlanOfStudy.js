@@ -315,14 +315,14 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
   }
 
    
-
-   
- 
+  // className={kt.checked===true? "table table-dark":'table table-hover table-bordered table-striped'}
+  // className='table table-hover table-bordered table-striped'
+  var kt=document.getElementById("mySwitch");
   return(
       // <div className="app-container">
       <div className="app-container" >
         <form >
-          <table className='table table-hover table-bordered table-striped' >
+          <table  className={kt.checked===true? "table table-hover table-dark":'table table-hover table-bordered table-striped'} >
               <thead>
                   <Tablehead/>
               </thead>
