@@ -1,11 +1,12 @@
 import React, { useState, Fragment } from 'react'
 import "./LogIn.css"
 
-/*
-Component LogIn: return a place to log in user name and password
-props:
- handleLogInSucceed: check succeed or not
- handleRemember: check do you want to remember or not
+/** 
+LogIn: 
+* return a place to log in user name and password
+* @component
+* @param {Function} handleLogInSucceed: check succeed or not
+* @param {Function} handleRemember: check do you want to remember or not
 */ 
 const LogIn = ({handleLogInSucceed,handleRemember}) => {
   const dataUser=[{uname:'hieu',psw:'1905'},{uname:'lam',psw:'0211'}];
