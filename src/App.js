@@ -11,7 +11,7 @@ import PageIntroduction from "./components/PageIntroduction";
 import PageAuthors from "./components/PageAuthors";
 
 
-/*
+/**
 Component LabelAndTable: Return a button has name of the subject. Klick to that button and the 
                          editable table will appear
 props: 
@@ -55,7 +55,7 @@ function LabelAndTable({dataSubs,indexSubject}){
 }
 
 
-/*
+/**
 Component Main : main page of home page, return Navigation Bar and list of Label and Table
 
 */
@@ -76,7 +76,7 @@ const Main=()=>{
 
 }
 
-/*
+/**
 Component App: Return Login page and all page
 */
 const App=()=>{

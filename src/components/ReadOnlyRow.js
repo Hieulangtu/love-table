@@ -1,19 +1,19 @@
 import React from 'react'
 
-/*
+/**
 Function: ReadOnlyRow
 A component to show every data and button that we can see in each row
 
 Props:
-data: value of a row 
-handleEditClick: handle the button 'Edit'
-handleDeleteClick: handle the button 'Delete'
-handleRowMoveUp: handle the button 'Move Up'
-handleRowMoveDown: handle the button 'Move Down'
-dataSubjects: general data
-index: index of this row in the general data
-pickedDataIdsUU: list IDs of the picked rows
-handlePickedDataIdsUU: handle with the list of id of picked rows
+@param {object} data: value of a row 
+@param {Function} handleEditClick: handle the button 'Edit'
+@param {Function} handleDeleteClick: handle the button 'Delete'
+@param {Function} handleRowMoveUp: handle the button 'Move Up'
+@param {Function} handleRowMoveDown: handle the button 'Move Down'
+@param {object} dataSubjects: general data
+@param {number} index: index of this row in the general data
+@param {Array} pickedDataIdsUU: list IDs of the picked rows
+@param {Function} handlePickedDataIdsUU: handle with the list of id of picked rows
 
 */
 const ReadOnlyRow = ({data, handleEditClick,handleDeleteClick,handleRowMoveUp,

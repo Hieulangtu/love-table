@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 
 
-/*
-Component Navbar : navigation bar, Click to go to another page : Home, Authors and Introduction
+/**
+Navbar: 
+* navigation bar, Click to go to another page : Home, Authors and Introduction
                                    also return a switch button Darkmode
+* @component
 */
-const Navbar = () => {
+const Navbar = (props) => {
 
   // Function darkLightMode to set className for the tag to decide if they are dark or white
   function darkLightMode() {
