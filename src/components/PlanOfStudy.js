@@ -107,7 +107,7 @@ const PlanOfStudy = ({dataSubs,indexSubject,dataSuggests}) => {
     }
 
     ///////////////////// function in ReadOnlyRow
-    /*
+    /* 
     Function: handleEditClick
      Click button 'Edit' in each row to change the data in that row
      The changing data will be saved in the 'dataChange' by useState
