@@ -1,14 +1,13 @@
 import React from 'react'
 
-/*
-Function: EditableRow 
-A component to take the data from the 'editing' row, save them instead of the old data in that row.
-
-Props:
-dataChange: data we set to change
-handleDataChange: handle the dataChange
-handleCancelClick: cancel adding the 'editing' data and keep the old data
-handleDataChangeConfirm: allow to use dataChange (data which was edited) instead of the old data
+/**
+EditableRow:
+* A component to take the data from the 'editing' row, save them instead of the old data in that row.
+* @component
+* @param {object} dataChange: data we set to change
+* @param {Function} handleDataChange: handle the dataChange
+* @param {Function} handleCancelClick: cancel adding the 'editing' data and keep the old data
+* @param {Function} handleDataChangeConfirm: allow to use dataChange (data which was edited) instead of the old data
 */
 const EditableRow = ({dataChange,handleDataChange,handleCancelClick,handleDataChangeConfirm}) => {
   return (

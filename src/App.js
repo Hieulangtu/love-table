@@ -11,12 +11,13 @@ import PageIntroduction from "./components/PageIntroduction";
 import PageAuthors from "./components/PageAuthors";
 
 
-/*
-Component LabelAndTable: Return a button has name of the subject. Klick to that button and the 
-                         editable table will appear
-props: 
- dataSubs: data of subjects
- indexSubject: index of dataSubs in the list
+/**
+LabelAndTable: 
+* Return a button has name of the subject. Klick to that button and the 
+   editable table will appear
+* @component
+* @param {object} dataSubs: data of subjects
+* @param {number} indexSubject: index of dataSubs in the list
 */
 function LabelAndTable({dataSubs,indexSubject}){
   const [showInformatika,setShowInformatika]=useState(false);
@@ -55,9 +56,10 @@ function LabelAndTable({dataSubs,indexSubject}){
 }
 
 
-/*
-Component Main : main page of home page, return Navigation Bar and list of Label and Table
-
+/**
+Main: 
+* Main page of home page, return Navigation Bar and list of Label and Table
+* @component
 */
 const Main=()=>{
 
@@ -76,20 +78,31 @@ const Main=()=>{
 
 }
 
-/*
-Component App: Return Login page and all page
+/**
+App: 
+* Return Login page and all page
+* @component
 */
 const App=()=>{
   const storageUser=JSON.parse(localStorage.getItem('historyUser'))
   const [startStav,setStartStav]=useState(storageUser?? false) ;
   
-  // function handleLogInSucceed: set Start Stav = true, so we can log in
+  
+  /**
+  handleLogInSucceed: 
+  * set Start Stav = true, so we can log in
+  * @function
+  */
   const handleLogInSucceed=()=>{
     setStartStav(true);
   }
 
 
-  //function handleRemember : save the Stav = true to local storage
+  /**
+  handleRemember:
+  * save the Stav = true to local storage
+  * @function
+  */
   const handleRemember=()=>{
     const jsonHistoryUser=JSON.stringify("true");
     localStorage.setItem('historyUser',jsonHistoryUser);

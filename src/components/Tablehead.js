@@ -1,6 +1,9 @@
 import React from 'react'
 
-/* Component: Head of table */
+/** Tablehead: 
+ * Head of table
+ * @component
+ */
 const Tablehead = () => {
   return (
     <tr>

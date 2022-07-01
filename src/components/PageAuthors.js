@@ -2,8 +2,10 @@ import React, { Fragment } from 'react'
 import Navbar from './Navbar'
 
 
-/*
-Component: PageAuthors , return list of component Authors. This is a page
+/**
+PageAuthors: 
+* return list of component Authors. This is a page
+* @component
 */
 const PageAuthors = () => {
   const authors =[

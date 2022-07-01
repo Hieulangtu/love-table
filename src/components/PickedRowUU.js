@@ -1,13 +1,11 @@
 import React from 'react'
 
-/*
-Function: PickedRowUU
-A component to use the changing data to fill in the picked rows, save them instead of the data in those rows.
-
-Props:
-handleDataPickedUU: handle the changing data
-handleDataPickedUUConfirm: allow to save the 'changing' data instead of the old data 
-
+/**
+PickedRowUU:
+* A component to use the changing data to fill in the picked rows, save them instead of the data in those rows.
+* @component
+* @param {Function} handleDataPickedUU: handle the changing data
+* @param {Function} handleDataPickedUUConfirm: allow to save the 'changing' data instead of the old data 
 */
 const PickedRowUU = ({handleDataPickedUU,handleDataPickedUUConfirm}) => {
   return (
